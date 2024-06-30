@@ -2,7 +2,9 @@ class Solution {
 public:
     bool searchMatrix(vector<vector<int>>& matrix, int target) {
         for(auto x : matrix){
-            if(bs(x,target)) return true;
+            if(x[0] <= target && target <= x[x.size()-1]){
+                return bs(x,target);
+            }
         }
         return false;
     }
