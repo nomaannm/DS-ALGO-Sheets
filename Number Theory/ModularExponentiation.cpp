@@ -59,6 +59,21 @@ long long recursiveExponentsCalculationByDividingTheExponentBy2Policy(int base, 
     }
 }
 
+int modularExponentiation(int x, int n, int m) {
+	int result = 1;
+	x = x % m;
+
+	while(n > 0){
+		if(n % 2 == 1){
+			result = (1LL * result * x) % m;
+
+		}
+		x = (1LL * x * x) %m;
+		n /= 2;
+	}
+
+	return result;
+}
 
 
 int main() {
